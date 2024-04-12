@@ -15,7 +15,7 @@ export const UsersList = () => {
   }, [dispatch]); // here we can leave dependency array empty as well
 
   if (isLoading) {
-    return <Skeleton count={3} />;
+    return <Skeleton count={3} className="h-6 w-full" />;
   }
 
   if (error) {
