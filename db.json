@@ -1,5 +1,46 @@
 {
-  "users": [{ "id": 1, "name": "Myra" }],
+  "users": [
+    {
+      "id": "1",
+      "name": "Myra"
+    },
+    {
+      "id": "ef1f",
+      "name": "Charles Auer"
+    },
+    {
+      "id": "0c58",
+      "name": "Cecilia Cassin PhD"
+    },
+    {
+      "id": "21e3",
+      "name": "Lorene Lowe"
+    },
+    {
+      "id": "6775",
+      "name": "Allan Armstrong"
+    },
+    {
+      "id": "400a",
+      "name": "Karla Buckridge"
+    },
+    {
+      "id": "017c",
+      "name": "Antonio Pfannerstill Jr."
+    },
+    {
+      "id": "b918",
+      "name": "Woodrow Sipes"
+    },
+    {
+      "id": "174f",
+      "name": "Myra Rodriguez"
+    },
+    {
+      "id": "4317",
+      "name": "Jon Brakus"
+    }
+  ],
   "albums": [],
   "photos": []
 }
