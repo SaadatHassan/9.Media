@@ -1,44 +1,20 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Myra"
+      "id": "dcb6",
+      "name": "Ms. Krista DuBuque"
     },
     {
-      "id": "ef1f",
-      "name": "Charles Auer"
+      "id": "e2fe",
+      "name": "Alexandra Kertzmann"
     },
     {
-      "id": "0c58",
-      "name": "Cecilia Cassin PhD"
+      "id": "6ec0",
+      "name": "Lori O'Kon"
     },
     {
-      "id": "21e3",
-      "name": "Lorene Lowe"
-    },
-    {
-      "id": "6775",
-      "name": "Allan Armstrong"
-    },
-    {
-      "id": "400a",
-      "name": "Karla Buckridge"
-    },
-    {
-      "id": "017c",
-      "name": "Antonio Pfannerstill Jr."
-    },
-    {
-      "id": "b918",
-      "name": "Woodrow Sipes"
-    },
-    {
-      "id": "174f",
-      "name": "Myra Rodriguez"
-    },
-    {
-      "id": "4317",
-      "name": "Jon Brakus"
+      "id": "132d",
+      "name": "Ervin Kutch II"
     }
   ],
   "albums": [],

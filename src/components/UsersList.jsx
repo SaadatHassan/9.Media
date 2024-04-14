@@ -1,50 +1,49 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { addUser, fetchUsers } from "../store";
 import { Skeleton } from "./Skeleton";
 import Button from "../components/Button";
+import { useThunk } from "../hooks/useThunk";
+import { UsersListItem } from "./UsersListItem";
 
 export const UsersList = () => {
-  const dispatch = useDispatch();
+  const [doFetchUsers, isUsersLoading, loadingUserError] = useThunk(fetchUsers);
+  const [doAddUser, isCreatingUser, creatingUserError] = useThunk(addUser);
 
-  const { isLoading, data, error } = useSelector((state) => {
+  const { data } = useSelector((state) => {
     return state.users;
   });
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]); // here we can leave dependency array empty as well
+    doFetchUsers();
+  }, [doFetchUsers]);
 
-  const handleAddUser = (second) => {
-    dispatch(addUser());
+  const handleAddUser = () => {
+    doAddUser();
   };
 
-  if (isLoading) {
-    return <Skeleton count={data.length} className="h-6 w-full" />;
-  }
+  let content;
 
-  if (error) {
-    return <div>Error fetching data</div>;
+  if (isUsersLoading) {
+    content = <Skeleton count={6} className="h-6 w-full" />;
+  } else if (loadingUserError) {
+    content = <div>Error fetching data</div>;
+  } else {
+    content = data.map((user) => {
+      return <UsersListItem key={user.id} user={user} />;
+    });
   }
-  const renderedUsers = data.map((user) => {
-    return (
-      <div key={user.id} className="mb-2 border rounded">
-        <div className="flex p-2 justify-between items-center cursor-pointer">
-          {user.name}
-        </div>
-      </div>
-    );
-  });
 
   return (
     <div>
-      <div className="flex flex-row justify-between m-3">
+      <div className="flex flex-row justify-between items-center m-3">
         <h1 className="m-2 text-xl">Users</h1>
-        <Button primary onClick={handleAddUser}>
+        <Button loading={isCreatingUser} primary onClick={handleAddUser}>
           + Add User
         </Button>
+        {creatingUserError && "error while creating user..."}
       </div>
-      <div>{renderedUsers}</div>
+      <div>{content}</div>
     </div>
   );
 };
