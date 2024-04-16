@@ -15,6 +15,7 @@ export const UsersListItem = ({ user }) => {
   };
 
   const header = (
+    // wrapping in fragment will show everything in one line
     <>
       <Button
         className="mr-3"
