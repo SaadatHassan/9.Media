@@ -7,6 +7,7 @@ import { useThunk } from "../hooks/useThunk";
 import { UsersListItem } from "./UsersListItem";
 
 export const UsersList = () => {
+  // useThunk is a custom hook
   const [doFetchUsers, isUsersLoading, loadingUserError] = useThunk(fetchUsers);
   const [doAddUser, isCreatingUser, creatingUserError] = useThunk(addUser);
 
@@ -37,7 +38,7 @@ export const UsersList = () => {
   return (
     <div>
       <div className="flex flex-row justify-between items-center m-3">
-        <h1 className="m-2 text-xl">Users</h1>
+        <h1 className="m-2 text-xl font-bold">Users</h1>
         <Button loading={isCreatingUser} primary onClick={handleAddUser}>
           + Add User
         </Button>

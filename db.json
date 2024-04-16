@@ -1,6 +1,10 @@
 {
   "users": [
     {
+      "id": "1",
+      "name": "Saadat"
+    },
+    {
       "id": "dcb6",
       "name": "Ms. Krista DuBuque"
     },
@@ -11,12 +15,109 @@
     {
       "id": "6ec0",
       "name": "Lori O'Kon"
-    },
-    {
-      "id": "132d",
-      "name": "Ervin Kutch II"
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": "0853",
+      "userId": "dcb6",
+      "title": "Tasty Rubber Pizza"
+    },
+    {
+      "id": "dc84",
+      "userId": "184b",
+      "title": "Sleek Granite Pizza"
+    },
+    {
+      "id": "8e66",
+      "userId": "184b",
+      "title": "Refined Cotton Chicken"
+    },
+    {
+      "id": "7487",
+      "userId": "184b",
+      "title": "Oriental Metal Chicken"
+    },
+    {
+      "id": "bf3f",
+      "userId": "77de",
+      "title": "Bespoke Frozen Chicken"
+    },
+    {
+      "id": "95cd",
+      "userId": "f2e0",
+      "title": "Small Fresh Sausages"
+    },
+    {
+      "id": "a535",
+      "userId": "7ed7",
+      "title": "Ergonomic Plastic Hat"
+    },
+    {
+      "id": "d7f3",
+      "userId": "1",
+      "title": "Fantastic Wooden Chicken"
+    },
+    {
+      "id": "8aa0",
+      "userId": "3310",
+      "title": "Refined Concrete Hat"
+    },
+    {
+      "id": "8959",
+      "userId": "3310",
+      "title": "Elegant Rubber Fish"
+    },
+    {
+      "id": "d119",
+      "userId": "3310",
+      "title": "Recycled Concrete Pizza"
+    },
+    {
+      "id": "9849",
+      "userId": "3310",
+      "title": "Modern Metal Table"
+    },
+    {
+      "id": "67f1",
+      "userId": "3310",
+      "title": "Awesome Soft Shirt"
+    },
+    {
+      "id": "60fc",
+      "userId": "3310",
+      "title": "Generic Steel Bike"
+    },
+    {
+      "id": "41cd",
+      "userId": "3310",
+      "title": "Incredible Rubber Bike"
+    },
+    {
+      "id": "08b3",
+      "userId": "3310",
+      "title": "Practical Granite Table"
+    },
+    {
+      "id": "56e6",
+      "userId": "5eb2",
+      "title": "Generic Fresh Gloves"
+    },
+    {
+      "id": "0eb7",
+      "userId": "f2e0",
+      "title": "Generic Bronze Chair"
+    },
+    {
+      "id": "5b71",
+      "userId": "77de",
+      "title": "Bespoke Cotton Shoes"
+    },
+    {
+      "id": "6ae3",
+      "userId": "1",
+      "title": "Sleek Concrete Tuna"
+    }
+  ],
   "photos": []
 }

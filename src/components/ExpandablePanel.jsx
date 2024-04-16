@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { GoChevronDown, GoChevronLeft } from "react-icons/go";
 
 export const ExpandablePanel = ({ header, children }) => {
-  const [isExpended, setIsExpended] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleExpend = () => {
-    setIsExpended(!isExpended);
+  const handleExpand = () => {
+    setIsExpanded(!isExpanded);
   };
 
   return (
@@ -14,11 +14,11 @@ export const ExpandablePanel = ({ header, children }) => {
         <div className="flex flex-row items-center justify-between">
           {header}
         </div>
-        <div className=" cursor-pointer" onClick={handleExpend}>
-          {isExpended ? <GoChevronDown /> : <GoChevronLeft />}
+        <div className=" cursor-pointer" onClick={handleExpand}>
+          {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
         </div>
       </div>
-      {isExpended && <div className="p-2 border-t">{children}</div>}
+      {isExpanded && <div className="p-2 border-t">{children}</div>}
     </div>
   );
 };
