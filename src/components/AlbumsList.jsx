@@ -6,7 +6,7 @@ import Button from "./Button";
 import { AlbumListItem } from "./AlbumListItem";
 
 export const AlbumsList = ({ user }) => {
-  const { data, error, isLoading } = useFetchAlbumsQuery(user);
+  const { data, error, isFetching } = useFetchAlbumsQuery(user);
 
   const [addAlbum, results] = useAddAlbumMutation();
 
@@ -16,7 +16,7 @@ export const AlbumsList = ({ user }) => {
 
   let content;
 
-  if (isLoading) {
+  if (isFetching) {
     content = <Skeleton count={3} className="h-10 w-full" />;
   } else if (error) {
     content = <div>Error while fetching albums...</div>;

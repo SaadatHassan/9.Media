@@ -11,11 +11,15 @@ export const albumsApi = createApi({
       // this name will produce a hook called useFetchAlbumsQuery
       fetchAlbums: builder.query({
         // third argument is basically whatever we will pass the argument when we call the hook useFetchAlbumsQuery(user)
-        providesTags: [
-          (result, error, user) => {
-            return { type: "Album", id: user.id };
-          },
-        ],
+        providesTags: (result, error, user) => {
+          //return [{ type: "Album", id: user.id }];
+          const tags = result.map((album) => {
+            return { type: "Album", id: album.id };
+          });
+          tags.push({ type: "UsersAlbums", id: user.id });
+          return tags;
+        },
+
         // when we call the hook and pass argument to it, it will pass it to here. e.g. useFetchAlbumsQuery(user) ---> query: (user) => {}
         query: (user) => {
           return {
@@ -30,11 +34,9 @@ export const albumsApi = createApi({
 
       addAlbum: builder.mutation({
         // here the third argument is whatever we will pass in the function that we get from calling the hook useAddAlbumMutation()
-        invalidatesTags: [
-          (result, error, user) => {
-            return { type: "Album", id: user.id };
-          },
-        ],
+        invalidatesTags: (result, error, user) => {
+          return [{ type: "UsersAlbums", id: user.id }];
+        },
         query: (user) => {
           return {
             url: "/albums",
@@ -48,11 +50,9 @@ export const albumsApi = createApi({
       }),
 
       removeAlbum: builder.mutation({
-        invalidatesTags: [
-          (result, error, album) => {
-            return { type: "Album", id: album.id };
-          },
-        ],
+        invalidatesTags: (result, error, album) => {
+          return [{ type: "Album", id: album.id }];
+        },
         query: (album) => {
           return {
             url: `/albums/${album.id}`,
